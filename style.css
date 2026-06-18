@@ -1,0 +1,177 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font: white;
+    --bgMenu: #333;
+    --bgBody: #f1f1f1;
+    --btnHover: #aaa;
+    --bgfundo:#7c7575;
+
+}
+body{
+    background-color: var(--bgfundo);
+    flex-direction: column;
+    min-height: 100vh; 
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    
+}
+
+header{
+    text-align: center;
+    width: 100%;
+    margin: 10px;
+    position: center;
+}
+
+#cabeçalho{
+    display: flex;
+    margin: 0 auto; 
+    background-color: var(--bgBody);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    margin: 0 auto; 
+}
+
+label[for="btnMenu"] {
+    height: 50px;
+    flex: 1;
+    background-color: var(--bgMenu);
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    color: var(--font);
+    display: none;
+}
+
+.active {
+    display: flex;
+}
+
+nav{
+    display: flex;
+    background-color: var(--bgMenu);
+    flex-direction: row; /* Pode usar row fica rem linha como o padrão, column vai deixar um de baixo do outro */
+}
+
+nav a{
+    text-decoration: none;
+    color: var(--font);
+    padding: 16px;
+    min-width: 120px;
+    text-align: center;
+    border: 1px;
+    flex: 1px;
+}
+
+nav a:hover {
+    background-color: var(--btnHover);
+}
+
+.seçao{
+    height: auto;
+    background-color: var(--bgBody);
+    /* margin: 10px; */
+    margin: 10px;
+    padding: 10px;
+}
+.cinza{
+    margin: 10px;
+    background-color: var(--bgfundo);
+    height: 180px;
+    padding: 10px;
+}
+
+h2, h3, p{
+    margin: 15px;
+}
+
+.row {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.col25 {
+    width: 25%;
+
+}
+
+.col75{
+    width: 75%;
+}
+
+input[type='text'], input[type='email'], textarea{
+    border-radius: 4px;
+    border: 1px solid var(--bgMenu);
+    width: 100%;
+    padding: 12px;
+}
+
+main{
+    flex: 1;
+    display: flex;
+}
+
+.coluna1{
+    display: flex;
+    width: 75%;
+    flex-direction: column;
+    
+}
+
+aside{
+    display: flex;
+    margin: 10px;
+    width: 25%;
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+}
+
+.sobremim{
+    background-color: var(--bgBody);
+}
+
+#rodape{
+    margin: 10px;
+    display: flex;
+    height: 60px;
+    background-color: var(--bgBody);
+    justify-content: center;
+    align-items: center;
+
+}
+
+@media (max-width: 800px) {
+    label[for="btnMenu"] {
+        display: flex;
+    }
+    nav {
+        display: none; /* O JS deve alternar isso mudando a classe ou estilo */
+        flex-direction: column;
+    }
+    nav.active {
+        display: flex;
+    }
+    main {
+        flex-direction: column; /* Faz o aside ir para baixo da coluna1 */
+    }
+    .coluna1 {
+        width: 100%;
+    }
+    aside {
+        width: 100%;
+        margin: 10px 0;
+    }
+    .col25, .col75 {
+        width: 100%; /* Formulário vira coluna única no celular */
+    }
+}
